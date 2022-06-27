@@ -1,5 +1,6 @@
 def get_user_choice():
-    user_choice = input("Please enter rock (r), paper (p) or scissors (s)")
+    
+    user_choice = input("what is you choice? Please enter r for (rock), p for (papper) or s for (scissors)")
 
     if user_choice == "r":
         return "rock"
@@ -7,45 +8,36 @@ def get_user_choice():
         return "paper"
     elif user_choice =="s":
         return "scissors"
-    else:
-        return "invalid"
-
+        
 def get_computer_choice(choice_list):
     import random   
     return random.choice(choice_list)
 
 def who_won(user_choice, computer_choice):
     if user_choice == computer_choice:
-        return "The result is a draw"
+        return "The match is a draw"
     elif user_choice == 'rock':
         if computer_choice == 'scissors':
-            return "Rock sharpens scissors: you win"
+            return "you win"
         elif computer_choice == 'paper':
-            return "Paper wraps rock: computer wins"
-        else:
-            return "The computer's selection could not be processed"
+            return "computer wins"
+
     elif user_choice == 'scissors':
         if computer_choice == 'paper':
-            return "Scissors cut paper=: you win"
+            return " you win"
         elif computer_choice == 'rock':
-            return "Rock sharpens scissors: computer wins"
-        else:
-            return "The computer's selection could not be processed"
+            return " computer wins"
+
     elif user_choice == 'paper':
         if computer_choice == 'scissors':
-            return "Scissors cut paper=: computer wins"
+            return " computer wins"
         elif computer_choice == 'rock':
-            return "Rock sharpens scissors: you win"
-        else:
-            return "The computer's selection could not be processed"
-    else:
-        return "Your selection could not be processed"
-        
-def play_rps():
-    rps_list = ['rock', 'paper', 'scissors']
-    computer_choice = get_computer_choice(rps_list)
+            return " you win"
+def play():
+    choice_list = ['rock', 'paper', 'scissors']
+    computer_choice = get_computer_choice(choice_list)
     user_choice = get_user_choice()
 
-    print("You chose", user_choice)
-    print("The computer chose", computer_choice)
+    print("Your choice is", user_choice)
+    print("The computer choice is", computer_choice)
     print(who_won(user_choice, computer_choice))
