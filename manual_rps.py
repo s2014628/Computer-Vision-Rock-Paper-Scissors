@@ -8,7 +8,7 @@ def get_user_choice():
         return "paper"
     elif user_choice =="s":
         return "scissors"
-        
+
 def get_computer_choice(choice_list):
     import random   
     return random.choice(choice_list)
@@ -21,7 +21,6 @@ def who_won(user_choice, computer_choice):
             return "you win"
         elif computer_choice == 'paper':
             return "computer wins"
-
     elif user_choice == 'scissors':
         if computer_choice == 'paper':
             return " you win"
@@ -41,3 +40,4 @@ def play():
     print("Your choice is", user_choice)
     print("The computer choice is", computer_choice)
     print(who_won(user_choice, computer_choice))
+play()
