@@ -1,12 +1,16 @@
+import numpy as np
 def get_prediction(prediction):
-    if prediction[0][0]>0.5:
-        return'Rock'
-    elif prediction[0][1]>0.5:
-        return'Papper'
-    elif prediction[0][2]>0.5:
-        return'Scissors'
-    elif prediction[0][3]>0.5:
-        return'Nothing'
+
+    pred = np.argmax(prediction[0], axis=0)
+    if pred == 0:
+        return 'Rock'
+    elif pred == 1:
+        return 'Paper'
+    elif pred == 2:
+        return 'Scissors'
+    else:
+        return 'Nothing'
+
 
 def get_computer_choice(choice_list):
     import random   
@@ -15,19 +19,27 @@ def get_computer_choice(choice_list):
 def who_won(user_choice, computer_choice):
     if user_choice == computer_choice:
         return "The match is a draw"
-    elif user_choice == 'rock':
-        if computer_choice == 'scissors':
+    elif user_choice == 'Rock':
+        if computer_choice == 'Scissors':
             return "you win"
-        elif computer_choice == 'paper':
+        elif computer_choice == 'Paper':
             return "computer wins"
-    elif user_choice == 'scissors':
-        if computer_choice == 'paper':
-            return " you win"
-        elif computer_choice == 'rock':
-            return " computer wins"
+    elif user_choice == 'Scissors':
+        if computer_choice == 'Paper':
+            return "you win"
+        elif computer_choice == 'Rock':
+            return "computer wins"
+    elif user_choice == 'Paper':
+        if computer_choice == 'Scissors':
+            return "computer wins"
+        elif computer_choice == 'Rock':
+            return "you win"
 
-    elif user_choice == 'paper':
-        if computer_choice == 'scissors':
-            return " computer wins"
-        elif computer_choice == 'rock':
-            return " you win"
+
+
+
+
+
+
+
+
