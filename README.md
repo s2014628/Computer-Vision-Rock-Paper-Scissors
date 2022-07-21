@@ -7,6 +7,3 @@ In this desined game we will use the training model to capture and identify the 
 
 The game will set as the best-of-five then the winner will be shown in the window. 
 
-The game design consist of four parts and the instruction will be given as follows:
-
-# Milestone 1
